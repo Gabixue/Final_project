@@ -154,7 +154,11 @@ class Tasks:
             exit()
 
         # create an instance of the task
-        t = Task(name, priority, due_date)
+        if not self.tasks:
+            id = 1
+        else:
+            id = self.tasks[-1].id + 1
+        t = Task(name, priority, id, due_date)
         self.tasks.append(t)
         print('Created task', t.id)
         # print(self.tasks)

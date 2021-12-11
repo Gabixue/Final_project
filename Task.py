@@ -3,12 +3,12 @@ import datetime
 
 
 class Task:
-    newId = itertools.count(1)
 
-    def __init__(self, name, priority, due_date=None, completed=None):
+
+    def __init__(self, name, priority, id, due_date=None, completed=None):
         self.created = datetime.date.today()
         # self.id = next(Task.newId)+1
-        self.id = next(self.newId)
+        self.id = id
         self.name = name
         self.priority = priority
 
